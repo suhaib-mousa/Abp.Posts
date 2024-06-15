@@ -1,10 +1,8 @@
 Hello ABP.IO Community,
 
-I'm thrilled to share a new feature I've added to the ABP.IO CMS Kit: the **Marked Item** system. This nifty addition lets users mark any kind of resource, like blog posts or products, as favorites, starred, flagged, or bookmarked.
-
 ### What's the Marked Item System?
 
-Imagine being able to easily flag your favorite blog posts or star important products. The Marked Item system does just that. It allows users to mark items with icons or emojis, making it super easy to keep track of what’s important to them.
+Imagine being able to easily flag your favorite blog posts or star important products. The Marked Item system does just that. It allows users to mark items with icons or emojis, making it super easy to keep track of what’s important to them. This nifty addition lets users mark any kind of resource, like blog posts or products, as favorites, starred, flagged, or bookmarked.
 
 ### Key Features
 
