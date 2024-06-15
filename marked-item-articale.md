@@ -1,5 +1,3 @@
-## Exciting New Feature in ABP.IO CMS Kit: Marked Item System
-
 Hello ABP.IO Community,
 
 I'm thrilled to share a new feature I've added to the ABP.IO CMS Kit: the **Marked Item** system. This nifty addition lets users mark any kind of resource, like blog posts or products, as favorites, starred, flagged, or bookmarked.
