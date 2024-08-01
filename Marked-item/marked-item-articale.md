@@ -2,7 +2,7 @@ Hello ABP.IO Community,
 
 I am excited to announce that we have a new helpful CMS feature 😁! 
 
-![cover-162](https://github.com/user-attachments/assets/73f685b0-8fb2-404c-bbf1-679502565013)
+![cmskit-module-markedItemsFilter](https://github.com/user-attachments/assets/809c8d2b-98b8-46cd-8547-2644b22cd71d)
 
 ### What's the Marked Item Feature?
 
@@ -48,7 +48,6 @@ By default, the CMS Kit features are turned off. Here’s how to turn on the Mar
 
 
 ### Filtering on Marked Items
-![cmskit-module-markedItemsFilter](https://github.com/user-attachments/assets/809c8d2b-98b8-46cd-8547-2644b22cd71d)
 Users can filter their marked items to easily find their favorites. Here’s how to utilize the `GetEntityIdsFilteredByUserAsync` method to filter the user's marked items within your repository queries:
 ```csharp
 List<string> entityIdFilters = null;
