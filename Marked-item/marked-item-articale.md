@@ -2,7 +2,7 @@ Hello ABP.IO Community,
 
 I am excited to announce that we have a new helpful CMS feature 😁! 
 
-### What's the Marked Item System?
+### What's the Marked Item Feature?
 
 Imagine being able to easily flag your favorite blog posts or star important products. The Marked Item system does just that. It allows users to mark items with icons or emojis, making it super easy to keep track of what’s important to them. This nifty addition lets users mark any kind of resource, like blog posts or products, as favorites, starred, flagged, or bookmarked.
 
