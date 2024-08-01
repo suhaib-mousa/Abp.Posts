@@ -2,6 +2,8 @@ Hello ABP.IO Community,
 
 I am excited to announce that we have a new helpful CMS feature 😁! 
 
+![cover-162](https://github.com/user-attachments/assets/73f685b0-8fb2-404c-bbf1-679502565013)
+
 ### What's the Marked Item Feature?
 
 Imagine being able to easily flag your favorite blog posts or star important products. The Marked Item system does just that. It allows users to mark items with icons or emojis, making it super easy to keep track of what’s important to them. This nifty addition lets users mark any kind of resource, like blog posts or products, as favorites, starred, flagged, or bookmarked.
@@ -46,7 +48,7 @@ By default, the CMS Kit features are turned off. Here’s how to turn on the Mar
 
 
 ### Filtering on Marked Items
-
+![cmskit-module-markedItemsFilter](https://github.com/user-attachments/assets/809c8d2b-98b8-46cd-8547-2644b22cd71d)
 Users can filter their marked items to easily find their favorites. Here’s how to utilize the `GetEntityIdsFilteredByUserAsync` method to filter the user's marked items within your repository queries:
 ```csharp
 List<string> entityIdFilters = null;
