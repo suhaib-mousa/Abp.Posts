@@ -35,24 +35,6 @@ Imagine being able to easily flag your favorite blog posts or star important pro
      });
      ```
 
-3. **Filtering on Marked Items**:
-   - Users can filter their marked items, making it a breeze to find their favorites.
-   - Here’s how you can filter marked items in your queries:
-     ```csharp
-     protected async override Task<IQueryable<YourEntity>> CreateFilteredQueryAsync(YourEntityPagedAndSortedResultDto input)
-     {
-         IQueryable<YourEntity> query = await base.CreateFilteredQueryAsync(input);
-
-         if (input.FilterOnFavorites && CurrentUser.IsAuthenticated)
-         {
-             var markedQuery = await UserMarkedItemRepository.GetQueryForUserAsync("entityType", CurrentUser.GetId());
-             query = query.Where(e => markedQuery.Any(m => m.EntityId == e.Id));
-         }
-
-         return query;
-     }
-     ```
-
 ### How to Enable the Marked Item Feature
 
 By default, the CMS Kit features are turned off. Here’s how to turn on the Marked Item feature in your application:
@@ -61,6 +43,22 @@ By default, the CMS Kit features are turned off. Here’s how to turn on the Mar
 2. **At Runtime**: Use the ABP Framework's Feature System.
 
 > Check the ["How to Install" section of the CMS Kit Module documentation](Index.md#how-to-install) to see how to enable/disable CMS Kit features on development time.
+
+
+### Filtering on Marked Items
+
+Users can filter their marked items to easily find their favorites. Here’s how to utilize the `GetEntityIdsFilteredByUserAsync` method to filter the user's marked items within your repository queries:
+```csharp
+List<string> entityIdFilters = null;
+if (userId.HasValue)
+{
+    entityIdFilters = await UserMarkedItemRepository.GetEntityIdsFilteredByUserAsync(userId.Value, entityType, cancellationToken: cancellationToken);
+}
+
+var queryable = (await GetDbSetAsync())
+    .WhereIf(entityIdFilters != null, x => entityIdFilters.Contains(x.Id.ToString()));
+// Additional query logic...
+```
 
 ### Conclusion
 
