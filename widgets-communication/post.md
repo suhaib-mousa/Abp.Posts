@@ -12,7 +12,7 @@ For example:
 2. **Courses Widget**: Listens for the category selection event and refreshes the course list accordingly.
 3. **Courses Number Widget**: Updates the course count based on the refreshed list.
 
-![widgets-communication](https://github.com/user-attachments/assets/1a27279c-4de7-40f9-904c-4c64b8e24efe)
+![widgets-communication](https://github-production-user-asset-6210df.s3.amazonaws.com/93185683/361334698-1a27279c-4de7-40f9-904c-4c64b8e24efe.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240826%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240826T071146Z&X-Amz-Expires=300&X-Amz-Signature=b2bb8f8ed1944b167e389c22002afaee788ef5f4a6da5e67b708e24ab7656190&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=815492912)
 
 #### Quick Implementation
 
