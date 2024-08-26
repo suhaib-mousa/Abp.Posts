@@ -109,7 +109,7 @@ Here's a brief overview of how it works:
 
 To link the widgets and ensure they refresh based on emitted events, you can hard-code this on the page containing the widgets or use the script field if you’re working within the ABP CMS Kit pages feature.
 
-![widgets-communication-script](https://github.com/user-attachments/assets/305f868e-8d4f-48b3-9dd5-85b2d57d0b62)
+![widgets-communication-script](https://private-user-images.githubusercontent.com/93185683/361334590-305f868e-8d4f-48b3-9dd5-85b2d57d0b62.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjQ2NTY2NDEsIm5iZiI6MTcyNDY1NjM0MSwicGF0aCI6Ii85MzE4NTY4My8zNjEzMzQ1OTAtMzA1Zjg2OGUtOGQ0Zi00OGIzLTlkZDUtODViMmQ1N2QwYjYyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODI2VDA3MTIyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ2Njg4ZjBlNWNhODUyZDcxYzE3ZmFjZjIxOGY2YjZmMGNkZDU4NWJkZWNlNDU3OTQwZmJmZjY2YTQ4MGJiYTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.bwrsEQw7yZiIn8a2PQaMypeOdDlmTlrxqx2DZH6pzz0)
 
 This setup makes your widgets flexible and easy to manage. Place them anywhere on the page, and they’ll work together effortlessly.
 
