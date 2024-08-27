@@ -12,7 +12,7 @@ For example:
 2. **Courses Widget**: Listens for the category selection event and refreshes the course list accordingly.
 3. **Courses Number Widget**: Updates the course count based on the refreshed list.
 
-![widgets-communication](https://github-production-user-asset-6210df.s3.amazonaws.com/93185683/361334698-1a27279c-4de7-40f9-904c-4c64b8e24efe.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240826%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240826T071146Z&X-Amz-Expires=300&X-Amz-Signature=b2bb8f8ed1944b167e389c22002afaee788ef5f4a6da5e67b708e24ab7656190&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=815492912)
+![widgets-communication](https://github.com/user-attachments/assets/67c0fcad-92ee-4870-9f93-fa3431799119)
 
 #### Quick Implementation
 
@@ -109,7 +109,7 @@ Here's a brief overview of how it works:
 
 To link the widgets and ensure they refresh based on emitted events, you can hard-code this on the page containing the widgets or use the script field if you’re working within the ABP CMS Kit pages feature.
 
-![widgets-communication-script](https://private-user-images.githubusercontent.com/93185683/361334590-305f868e-8d4f-48b3-9dd5-85b2d57d0b62.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjQ2NTY2NDEsIm5iZiI6MTcyNDY1NjM0MSwicGF0aCI6Ii85MzE4NTY4My8zNjEzMzQ1OTAtMzA1Zjg2OGUtOGQ0Zi00OGIzLTlkZDUtODViMmQ1N2QwYjYyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwODI2VDA3MTIyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ2Njg4ZjBlNWNhODUyZDcxYzE3ZmFjZjIxOGY2YjZmMGNkZDU4NWJkZWNlNDU3OTQwZmJmZjY2YTQ4MGJiYTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.bwrsEQw7yZiIn8a2PQaMypeOdDlmTlrxqx2DZH6pzz0)
+![widgets-communication-script](https://github.com/user-attachments/assets/ff8cb98d-553a-44ef-b7f6-3edee54b29ff)
 
 This setup makes your widgets flexible and easy to manage. Place them anywhere on the page, and they’ll work together effortlessly.
 
