@@ -14,7 +14,7 @@ abp add-package Volo.Abp.BlobStoring.Aws
 Edit your module configuration file (`YourModule.cs`) and add the AWS provider settings:
 
 ```csharp
-// add this
+// add this DependsOn
 [DependsOn(
     typeof(AbpBlobStoringModule),
     typeof(AbpBlobStoringAwsModule)
