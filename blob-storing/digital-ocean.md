@@ -1,5 +1,3 @@
-# Using ABP's AWS Blob Storing Provider with DigitalOcean Spaces
-
 [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces) is an S3-compatible object storage service, making it possible to integrate seamlessly with ABP’s AWS Blob Storage Provider. This guide explains how to configure your ABP application to use DigitalOcean Spaces as a blob storage provider.
 
 ## Step 1: Install the AWS Blob Storage Provider
