@@ -11,7 +11,7 @@ abp add-package Volo.Abp.BlobStoring.Aws
 
 ## Step 2: Configure DigitalOcean Spaces in ABP
 
-Edit your module configuration file (`DigitalOceanBlobStoringModule.cs`) and add the AWS provider settings:
+Edit your module configuration file (`YourModule.cs`) and add the AWS provider settings:
 
 ```csharp
 [DependsOn(
