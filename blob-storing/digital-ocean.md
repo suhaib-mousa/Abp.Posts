@@ -1,20 +1,28 @@
-[DigitalOcean Spaces](https://www.digitalocean.com/products/spaces) is an S3-compatible object storage service, making it possible to integrate seamlessly with ABP’s AWS Blob Storage Provider. This guide explains how to configure your ABP application to use DigitalOcean Spaces as a blob storage provider.
+[DigitalOcean Spaces](https://www.digitalocean.com/products/spaces) is an S3-compatible object storage service, making it easy to integrate with ABP’s AWS Blob Storage Provider. However, because DigitalOcean requires a custom ServiceURL, we need a few changes to make it work seamlessly.
 
-## Step 1: Install the AWS Blob Storage Provider
+This guide walks you through setting up DigitalOcean Spaces as your blob storage provider in an ABP application.
 
-Run the following command in your ABP project:
+## Step 1: Install the Required Blob Storage Packages  
+
+Before setting up DigitalOcean Spaces, make sure you have the **core Blob Storing package** installed:  
 
 ```sh
-# Install AWS Blob Storage Provider
-abp add-package Volo.Abp.BlobStoring.Aws
+abp add-package Volo.Abp.BlobStoring
 ```
 
-## Step 2: Configure DigitalOcean Spaces in ABP
+Then, install the **AWS Blob Storage Provider** to enable S3-compatible storage:  
 
-Edit your module configuration file (`YourModule.cs`) and add the AWS provider settings:
+```sh
+abp add-package Volo.Abp.BlobStoring.Aws
+```
+---
+
+## Step 2: Configure DigitalOcean Spaces
+
+Modify your module configuration file (`YourModule.cs`) and include the AWS provider settings:
 
 ```csharp
-// add this DependsOn
+// required DependsOn
 [DependsOn(
     typeof(AbpBlobStoringModule),
     typeof(AbpBlobStoringAwsModule)
@@ -37,14 +45,15 @@ public class YourModule : AbpModule
     }
 }
 ```
+---
 
-## Step 3: Handling Custom Amazon S3 Client for DigitalOcean Spaces
+## Step 3: Implement a Custom S3 Client Factory
 
-By default, ABP uses **AWS’s `AmazonS3Client`**, which does **not** allow setting a custom `ServiceURL` directly. Since DigitalOcean Spaces requires a specific `ServiceURL`, we must override the default S3 client factory.
+#### ❓ Why Do We Need a Custom `AmazonS3Client`?  
 
-### Why Does DigitalOcean Require a Custom AmazonS3Client?
+Unlike AWS S3, **DigitalOcean Spaces requires setting a specific `ServiceURL`** (e.g., `https://nyc3.digitaloceanspaces.com`). The **default `AmazonS3Client` in ABP does not allow this**, so we need to override the S3 client factory.
 
-Unlike AWS S3, **DigitalOcean Spaces requires explicitly setting a `ServiceURL`** to the appropriate regional endpoint (e.g., `https://nyc3.digitaloceanspaces.com`).
+Here’s what a standard [C# DigitalOcean S3 client](https://docs.digitalocean.com/products/spaces/how-to/use-aws-sdks/#configure-a-client) looks like:  
 
 ```csharp
 var config = new AmazonS3Config
@@ -56,11 +65,7 @@ var config = new AmazonS3Config
 var client = new AmazonS3Client("YOUR-ACCESS-KEY", "YOUR-SECRET-KEY", config);
 ```
 
-Since **ABP does not provide a direct way to set `ServiceURL`**, we **must replace the default `AmazonS3Client` factory**.
-
-### Custom Amazon S3 Client Factory
-
-The following implementation ensures every S3 request is correctly routed to DigitalOcean Spaces:
+Since ABP doesn’t support setting the `ServiceURL` directly, we must **replace the default S3 client factory**, here’s how you override the **default Amazon S3 client** in ABP:
 
 ```csharp
 using Amazon.S3;
@@ -84,7 +89,7 @@ public class CustomAmazonS3ClientFactory : DefaultAmazonS3ClientFactory
     {
         var config = new AmazonS3Config
         {
-            ServiceURL = "https://nyc3.digitaloceanspaces.com",
+            ServiceURL = "https://nyc3.digitaloceanspaces.com", // Replace with your region's endpoint
             ForcePathStyle = true
         };
 
@@ -93,9 +98,13 @@ public class CustomAmazonS3ClientFactory : DefaultAmazonS3ClientFactory
 }
 ```
 
-## Step 4: Create a Blob Storage Container
+This ensures all **S3 requests are correctly routed** to DigitalOcean Spaces.
 
-Define a blob container for **DigitalOcean Spaces**:
+---
+
+## Step 4: Define a Blob Storage Container
+
+To store files in DigitalOcean Spaces, create a **blob container**:
 
 ```csharp
 using Volo.Abp.BlobStoring;
@@ -104,9 +113,9 @@ using Volo.Abp.BlobStoring;
 public class DigitalOceanContainer {}
 ```
 
-## Step 5: Upload a File to DigitalOcean Spaces
+## Step 5: Upload Files to DigitalOcean Spaces
 
-Use dependency injection to access the blob container and upload a file:
+Inject the **blob container** into your service and start uploading files:
 
 ```csharp
 using System.Threading.Tasks;
@@ -138,19 +147,21 @@ public class HelloWorldService : ITransientDependency
 
 ## Additional Blob Storing Operations
 
-ABP.io provides built-in methods to **retrieve**, **delete**, and **manage files** in blob storage. Here are some common operations:
+Once your integration is set up, you can **retrieve, delete, and manage files** easily:
 
-### Get a File
+**Get a file:**  
 ```csharp
 var fileBytes = await BlobContainer.GetAllBytesAsync("hi/hello-world.txt");
 ```
 
-### Delete a File
+**Delete a file:**  
 ```csharp
 await BlobContainer.DeleteAsync("hi/hello-world.txt");
 ```
 
-For more advanced scenarios, visit the official documentation: [ABP Blob Storing](https://abp.io/docs/latest/framework/infrastructure/blob-storing).
+For more details, check the [**official ABP documentation**](https://abp.io/docs/latest/framework/infrastructure/blob-storing)
+
+---
 
 ## Conclusion
 
