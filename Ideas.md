@@ -1,0 +1,1 @@
+- [ ] PR about enable shared records for NULL TenantId
