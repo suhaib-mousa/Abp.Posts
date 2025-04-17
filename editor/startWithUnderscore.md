@@ -14,7 +14,7 @@ When what you actually want is:
 private readonly ICdnProvider _cdnProvider;
 ```
 
-Good news: **Visual Studio**** can be configured to do exactly that.
+Good news: **Visual Studio** can be configured to do exactly that.
 
 ---
 
