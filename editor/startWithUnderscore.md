@@ -28,7 +28,7 @@ To make Quick Actions (`Alt + Enter`) suggest `_camelCase` for private fields:
    - **Name Style Title**: startWithUnderscore
    - **Required Prefix:** `_`
    - **Required Suffix** ``
-   - **Word Separator88 ``
+   - **Word Separator** ``
    - **Capitalization:** `camel Case Name`
 5. Add a new naming rule:
    - Specification: Private or Internal field
