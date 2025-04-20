@@ -1,4 +1,4 @@
-Ever had a moment while working on your ABP.IO app where you *know* something's going wrong inside a NuGet package, but you can’t see what's happening?
+Ever had a moment while working on your code where you *know* something's going wrong inside a NuGet package, but you can’t see what's happening?
 
 Good news: Visual Studio can actually let you step **inside** those packages—even ones like `Volo.Abp.Account` or `Volo.Abp.Identity`.
 
