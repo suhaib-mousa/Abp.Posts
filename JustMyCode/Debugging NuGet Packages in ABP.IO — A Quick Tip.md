@@ -1,40 +1,37 @@
-Ever had a moment while working on your code where you *know* something's going wrong inside a NuGet package, but you can’t see what's happening?
+Ever had a moment where you're certain something's going wrong inside a NuGet package, but you can’t quite see what’s happening?
 
-Good news: Visual Studio can actually let you step **inside** those packages—even ones like `Volo.Abp.Account` or `Volo.Abp.Identity`.
+Good news: **Visual Studio lets you step directly into those packages**—even ones like `Volo.Abp.Account` or `Volo.Abp.Identity`.
+
+### How to Enable Debugging Inside NuGet Packages
+
+1. **Turn off “Just My Code”**
+   Go to `Tools → Options → Debugging`, then uncheck **Enable Just My Code**.
+
+2. **Enable Microsoft Symbol Servers**
+   Navigate to `Tools → Options → Debugging → Symbols` and check **Microsoft Symbol Servers**.
+
+3. **Enable Source Link Support**
+   Visual Studio will try to fetch actual source files from NuGet packages. Most ABP.IO packages already support Source Link out of the box.
+
+### Real-World Example
+
+Let’s say you're overriding `IdentityUserAppService`, and something isn’t behaving correctly in `CreateAsync`.
+
+You place a breakpoint on `base.CreateAsync(input)` and press **F11**.
+
+Suddenly, you're stepping into the **actual ABP source code**, pulled directly from the NuGet package.
+
+Now you can see how user creation is handled under the hood, how roles are assigned, and what data gets persisted.
+
+### A Few Things to Keep in Mind
+
+* Symbol loading and Source Link support can **slow down your IDE** and debugging experience.
+* Once you're done digging through package internals, it’s a good idea to re-enable "Just My Code" and disable symbol servers to keep things fast.
+
+### Final Thought
+
+Whether you're troubleshooting login flows, background jobs, or auditing logic, being able to step inside NuGet packages is a huge time-saver. It’s one of those small Visual Studio tweaks that can make a big difference—especially when working with frameworks like ABP.
 
 ---
 
-### 🛠️ Here's how to enable it:
-
-1. **Turn off “Just My Code”**  
-   `Tools → Options → Debugging → Uncheck "Enable Just My Code"`
-
-2. **Enable Microsoft Symbol Servers**  
-   `Tools → Options → Debugging → Symbols → Check "Microsoft Symbol Servers"`
-
-3. **Enable Source Link support**  
-   Visual Studio will try to pull down actual source files from NuGet (most ABP.IO packages support this!).
-
----
-
-### 💡 Real-World Example
-
-Let’s say you’re overriding ABP’s `IdentityUserAppService`, and something’s not working in `CreateAsync`.
-
-You put a breakpoint on `base.CreateAsync(input)`... then hit **F11**.
-
-Boom 💥—you’re now stepping through **the actual ABP.IO source code** from the NuGet package.
-
-This helps you understand how user creation works, how roles are assigned, and what’s getting saved.
-
----
-
-> ⚠️ **Heads up:**  
-> Enabling symbol loading and Source Link might slow down your IDE and debugging sessions.  
-> **Tip:** Once you're done debugging NuGet internals, go back and **re-enable "Just My Code"** and disable the symbol servers to speed things up.
-
----
-
-### 🎯 Final Thought
-
-Whether you're debugging login flows, auditing logic, or background jobs, stepping into NuGet packages can save you hours. Just don’t forget to switch the settings back when you're done!
+Would you like a version formatted for Markdown or a shorter summary for social media too?
