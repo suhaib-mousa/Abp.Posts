@@ -97,16 +97,20 @@ public override async Task<IdentityUserDto> CreateAsync(IdentityUserCreateDto in
 
 Commercial ABP modules (e.g., Volo.Saas, Volo.Payment, Volo.FormManagement) are not open-source and are distributed as obfuscated and encrypted DLLs. Consequently, Source Link does not support these modules, and you cannot debug them directly unless you have access to their source code .
 
-### For ABP Commercial License Holders:
+## What About ABP Commercial Packages?
+Commercial packages like `Volo.Saas`, `Volo.Payment`, and `Volo.FormManagement`:
 
-If you have a valid ABP Commercial license, you can access the source code directly:
+- Are not Source Link enabled
+- Contain obfuscated and protected DLLs
+- Cannot be debugged unless you have direct source code access
 
-1. Access the [Accessing Source Code Of Modules](https://abp.io/docs/latest/suite/source-code#downloading-source-code-of-a-module)
-2. Follow the Downloading Source Code of a Module
-3. Reference the modules directly from source instead of using NuGet packages
-4. This provides the most seamless debugging experience
+✅ If You Have an ABP Commercial License:
+You can access the source code directly:
 
-Remember that ABP's licensing agreements may have terms regarding reverse engineering or decompilation, so always ensure you're complying with your license terms.
+1. Follow the official [guide](https://abp.io/docs/latest/suite/source-code#downloading-source-code-of-a-module)
+2. Reference the source modules instead of NuGet packages
+3. You can then debug them like any other part of your app
+> ⚠️ Do not attempt to decompile or reverse-engineer ABP Commercial DLLs — it violates licensing agreements.
 
 ## Troubleshooting Common Issues
 
