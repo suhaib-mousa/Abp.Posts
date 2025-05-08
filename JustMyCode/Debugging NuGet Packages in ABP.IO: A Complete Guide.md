@@ -52,14 +52,12 @@ When using "**Automatically choose what module symbols to search for**", you can
 2. In the dialog that appears, you can add specific ABP modules you want to debug:
 
     - Click the "+" button to add modules
-    - Add entries like `Volo.Abp.Identity.dll`
+    - Add entries like `Volo.Abp.Identity.Pro.Application.dll`
     - Check the checkbox next to each module you want to debug
-  
-![image](https://github.com/user-attachments/assets/8228e04d-47cb-4833-83c6-56b64e5748e9)
+
+![image](https://github.com/user-attachments/assets/36886489-6aea-4f38-87a5-584fc82275a0)
 
 This ensures Visual Studio will automatically load symbols for your specified ABP modules but won't slow down by loading symbols for everything else.
-
-3. This ensures Visual Studio only loads symbols for the modules you're interested in
 
 ### 3. Enable Source Link Support
 
