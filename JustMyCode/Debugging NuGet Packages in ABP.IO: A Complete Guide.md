@@ -52,14 +52,6 @@ Source Link is a technology that helps the debugger locate and download source c
 
 ![Enable Source Link Support](https://github.com/user-attachments/assets/b3835cfc-a6a6-465c-9633-8a2e5b5253d8)
 
-### 4. Configure Additional Source Server Options (Optional)
-
-For more control over source code loading:
-
-1. Still in **Debugging → General**
-2. Under "Source Server", check "**Allow source server for partial trust assemblies**" 
-3. Check "**Print source server diagnostic messages to the Output window**" to help with troubleshooting
-
 ## Understanding Source Link
 
 Source Link is a vital technology that bridges the gap between compiled code and source code repositories. Here's what you need to know:
