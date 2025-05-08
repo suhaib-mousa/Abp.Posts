@@ -38,9 +38,28 @@ Symbols (PDB files) provide the mapping between compiled code and source code, m
 1. In the Options dialog, go to **Debugging → Symbols**
 2. Check "**Microsoft Symbol Servers**" to download symbols from Microsoft's servers
 3. Check "**NuGet.org Symbol Server**" if available (or add `https://symbols.nuget.org/download/symbols` manually)
-4. Set a cache location for symbol files (or use the default)
-
+4. Set a cache location for symbol files (the default is typically in your AppData folder)
+5. **Important Performance Setting**: Under "Load symbols using the following strategy:"
+    - Choose "Load only specified modules" to avoid loading symbols for every module (recommended)
+    - Or choose "Load all modules, unless excluded" if you want all symbols loaded automatically
+      
 ![Configure Symbol Servers](https://github.com/user-attachments/assets/0c017cd4-d6db-4280-af56-092e5b84fa82)
+
+**Configuring Module Filters for Better Performance**
+When using "**Automatically choose what module symbols to search for**", you can specify which modules to prioritize:
+
+1. Click the "**Specify module filters**" link
+2. In the dialog that appears, you can add specific ABP modules you want to debug:
+
+    - Click the "+" button to add modules
+    - Add entries like `Volo.Abp.Identity.dll`
+    - Check the checkbox next to each module you want to debug
+  
+![image](https://github.com/user-attachments/assets/8228e04d-47cb-4833-83c6-56b64e5748e9)
+
+This ensures Visual Studio will automatically load symbols for your specified ABP modules but won't slow down by loading symbols for everything else.
+
+3. This ensures Visual Studio only loads symbols for the modules you're interested in
 
 ### 3. Enable Source Link Support
 
