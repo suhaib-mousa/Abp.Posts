@@ -39,25 +39,8 @@ Symbols (PDB files) provide the mapping between compiled code and source code, m
 2. Check "**Microsoft Symbol Servers**" to download symbols from Microsoft's servers
 3. Check "**NuGet.org Symbol Server**" if available (or add `https://symbols.nuget.org/download/symbols` manually)
 4. Set a cache location for symbol files (the default is typically in your AppData folder)
-5. **Important Performance Setting**: Under "Load symbols using the following strategy:"
-    - Choose "Load only specified modules" to avoid loading symbols for every module (recommended)
-    - Or choose "Load all modules, unless excluded" if you want all symbols loaded automatically
-      
+
 ![Configure Symbol Servers](https://github.com/user-attachments/assets/0c017cd4-d6db-4280-af56-092e5b84fa82)
-
-**Configuring Module Filters for Better Performance**
-When using "**Automatically choose what module symbols to search for**", you can specify which modules to prioritize:
-
-1. Click the "**Specify module filters**" link
-2. In the dialog that appears, you can add specific ABP modules you want to debug:
-
-    - Click the "+" button to add modules
-    - Add entries like `Volo.Abp.Identity.Pro.Application.dll`
-    - Check the checkbox next to each module you want to debug
-
-![image](https://github.com/user-attachments/assets/36886489-6aea-4f38-87a5-584fc82275a0)
-
-This ensures Visual Studio will automatically load symbols for your specified ABP modules but won't slow down by loading symbols for everything else.
 
 ### 3. Enable Source Link Support
 
@@ -102,7 +85,7 @@ public override async Task<IdentityUserDto> CreateAsync(IdentityUserCreateDto in
    - Use Source Link to fetch the original source code
    - Open the source file and position the cursor at the method you're stepping into
 
-![Debugging ABP Source Code](https://i.imgur.com/nL9cX3n.png)
+![image](https://github.com/user-attachments/assets/19ff707e-da08-44b8-b2e0-dfee812cb1d9)
 
 5. You can now debug through the ABP Framework code just like your own code:
    - Inspect variables
@@ -112,24 +95,18 @@ public override async Task<IdentityUserDto> CreateAsync(IdentityUserCreateDto in
 
 ## Debugging ABP Commercial Modules
 
-ABP Commercial modules require additional considerations:
+Commercial ABP modules (e.g., Volo.Saas, Volo.Payment, Volo.FormManagement) are not open-source and are distributed as obfuscated and encrypted DLLs. Consequently, Source Link does not support these modules, and you cannot debug them directly unless you have access to their source code .
 
 ### For ABP Commercial License Holders:
 
 If you have a valid ABP Commercial license, you can access the source code directly:
 
-1. Follow the [ABP Commercial Source Code Access documentation](https://docs.abp.io/en/commercial/latest/tutorials/source-code-access)
-2. Clone the ABP Commercial repository
+1. Access the [Accessing Source Code Of Modules](https://abp.io/docs/latest/suite/source-code#downloading-source-code-of-a-module)
+2. Follow the Downloading Source Code of a Module
 3. Reference the modules directly from source instead of using NuGet packages
 4. This provides the most seamless debugging experience
 
-### Without Source Access:
-
-If you don't have source access, debugging options are more limited:
-
-1. You can still disable "Just My Code" and load symbols
-2. You may see decompiled code instead of original source code
-3. Keep in mind that licensing agreements may restrict decompilation
+Remember that ABP's licensing agreements may have terms regarding reverse engineering or decompilation, so always ensure you're complying with your license terms.
 
 ## Troubleshooting Common Issues
 
