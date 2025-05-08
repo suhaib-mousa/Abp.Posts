@@ -50,7 +50,7 @@ Source Link is a technology that helps the debugger locate and download source c
 2. Check "**Enable Source Link support**"
 3. For additional control, you can also check "**Enable Source Server support**"
 
-![Enable Source Link Support](https://i.imgur.com/6rHzLsH.png)
+![Enable Source Link Support](https://github.com/user-attachments/assets/b3835cfc-a6a6-465c-9633-8a2e5b5253d8)
 
 ### 4. Configure Additional Source Server Options (Optional)
 
