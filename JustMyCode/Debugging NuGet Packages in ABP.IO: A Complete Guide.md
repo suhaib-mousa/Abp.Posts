@@ -29,7 +29,7 @@ This is the first critical step that tells Visual Studio to allow debugging of e
 3. In the Options dialog, select **Debugging → General**
 4. **Uncheck** the option labeled "**Enable Just My Code**"
 
-![Disable Just My Code](https://i.imgur.com/jNE18P9.png)
+![Disable Just My Code](https://github.com/user-attachments/assets/60f880a3-2a4e-407c-8b46-cbaa5c125bd3)
 
 ### 2. Configure Symbol Loading
 
