@@ -40,7 +40,7 @@ Symbols (PDB files) provide the mapping between compiled code and source code, m
 3. Check "**NuGet.org Symbol Server**" if available (or add `https://symbols.nuget.org/download/symbols` manually)
 4. Set a cache location for symbol files (or use the default)
 
-![Configure Symbol Servers](https://i.imgur.com/2DWX9hZ.png)
+![Configure Symbol Servers](https://github.com/user-attachments/assets/0c017cd4-d6db-4280-af56-092e5b84fa82)
 
 ### 3. Enable Source Link Support
 
